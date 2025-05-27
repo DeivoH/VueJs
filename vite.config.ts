@@ -1,6 +1,6 @@
-import { fileURLToPath } from 'node:url'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import { fileURLToPath } from 'node:url'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { VueRouterAutoImports, getPascalCaseRouteName } from 'unplugin-vue-router'
@@ -76,6 +76,7 @@ export default defineConfig({
     }),
 
   ],
+
   define: { 'process.env': {} },
   resolve: {
     alias: {
@@ -100,4 +101,20 @@ export default defineConfig({
       './src/**/*.vue',
     ],
   },
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: './vitest.setup.ts',
+    coverage: {
+      reporter: ['text', 'json', 'html'],
+      exclude: ['node_modules/', 'tests/'],
+    },
+    transformMode: {
+      web: [/.[jt]sx?$/],
+    },
+    deps: {
+      inline: [/vuetify/], // fuerza inline deps de Vuetify (puede ayudar)
+    },
+  },
+
 })

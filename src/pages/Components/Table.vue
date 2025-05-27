@@ -38,8 +38,8 @@ const headers = [
 
               <VDataTable :headers="headers" :items="posts" :items-per-page="5" class="elevation-1">
                 <template #item.actions="{ item }">
-                  <VBtn icon="tabler-eye" size="small" color="info" variant="text"
-                    @click="postStore.setDetails(item)" />
+                  <VBtn icon="tabler-eye" size="small" color="info" variant="text" @click="postStore.setDetails(item)"
+                    data-test="btn-view-details" />
                 </template>
               </VDataTable>
             </VCol>

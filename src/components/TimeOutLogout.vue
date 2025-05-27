@@ -3,8 +3,8 @@
 </template>
 
 <script>
-import { ref, onMounted, onUnmounted } from 'vue';
 import { router } from '@/plugins/1.router';
+import { onMounted, onUnmounted } from 'vue';
 
 export default {
   setup() {
@@ -18,7 +18,7 @@ export default {
       // Por ejemplo, llamar a una acción de logout, limpiar el almacenamiento local, etc.
       // Ejemplo: this.$store.dispatch('logout');
 
-      router.push("/");
+      router.push("/posts");
       // console.log('Usuario deslogueado automáticamente debido a inactividad.');
     };
 

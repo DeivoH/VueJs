@@ -101,20 +101,5 @@ export default defineConfig({
       './src/**/*.vue',
     ],
   },
-  test: {
-    environment: 'jsdom',
-    globals: true,
-    setupFiles: './vitest.setup.ts',
-    coverage: {
-      reporter: ['text', 'json', 'html'],
-      exclude: ['node_modules/', 'tests/'],
-    },
-    transformMode: {
-      web: [/.[jt]sx?$/],
-    },
-    deps: {
-      inline: [/vuetify/], // fuerza inline deps de Vuetify (puede ayudar)
-    },
-  },
 
 })

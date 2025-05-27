@@ -17,7 +17,7 @@ Sigue estos pasos para poner en marcha el proyecto en tu entorno local:
 
 # Descripción del proyecto 
 
-    Listado de posts generado desde un api publica con facilidad de visualizacion de los datos, contiene paginacion y facilidad de cambiar entre peticiones y reactividad de vue
+    Listado de posts generado desde un api publica con facilidad de visualizacion de los datos, contiene paginacion y facilidad de cambiar entre peticiones/reactividad de vue
 
 # ⚙️ Decisiones técnicas
 
@@ -55,6 +55,42 @@ Sigue estos pasos para poner en marcha el proyecto en tu entorno local:
     Composables personalizados en src/composables para lógica reutilizable como validaciones, peticiones HTTP o manejo de formularios.
 
     Stores con Pinia, separados por contexto en src/stores
+
+# ✅ Ejecución de Pruebas End-to-End (E2E) con Cypress
+    Sigue estos pasos para ejecutar correctamente los tests automatizados utilizando Cypress:
+
+    1. Instalar dependencias del proyecto
+    2. Asegúrate de tener todas las dependencias instaladas. Si aún no lo has hecho, ejecuta en la raíz del proyecto:
+
+    npm install
+
+    3. Abrir la interfaz de Cypress: 
+     - Ejecuta el siguiente comando en la raíz del proyecto para abrir el entorno gráfico de Cypress:
+        npx cypress open
+        
+    - Esto abrirá la interfaz interactiva donde podrás seleccionar el tipo de pruebas a ejecutar.
+
+    4. Seleccionar tipo de prueba E2E
+    
+    5. En la interfaz de Cypress, selecciona la opción E2E Testing para trabajar con pruebas de extremo a extremo (End-to-End).
+
+    6. Elegir el navegador y test a ejecutar
+
+        - Cypress te permitirá elegir el navegador donde se ejecutarán los tests (puedes usar Chrome, Edge, Electron, etc.).
+
+    7. Selecciona el archivo de prueba correspondiente, por ejemplo: posts.cy
+
+    8. Visualizar la ejecución
+
+    - Cypress abrirá una ventana del navegador donde podrás ver paso a paso cómo se ejecutan los tests, incluyendo las interacciones con la interfaz, las peticiones a la API,    los resultados esperados, y posibles errores.
+
+# 🧠 Ventajas de Cypress
+
+    Permite ver en tiempo real la ejecución de los tests.
+
+    Facilita la depuración de errores gracias a herramientas como el panel de comandos y el visor de solicitudes.
+
+
 
 # 🚀 Posibles mejoras futuras
 

@@ -5,7 +5,7 @@ import Table from './Components/Table.vue'
 
 
 definePage({
-  path: "/",
+  path: "/posts",
   name: "Index",
   meta: {
     layout: "blank",

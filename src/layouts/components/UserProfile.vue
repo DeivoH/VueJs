@@ -4,7 +4,7 @@ import avatar1 from "@images/avatars/avatar-1.png";
 
 
 const logout = () => {
-  router.push("/");
+  router.push("/posts");
 };
 </script>
 
@@ -40,7 +40,7 @@ const logout = () => {
           <VDivider class="my-2" />
 
           <!-- 👉 Logout -->
-          <VListItem to="/">
+          <VListItem to="/posts">
             <template #prepend>
               <VIcon class="me-2" icon="tabler-logout" size="22" />
             </template>

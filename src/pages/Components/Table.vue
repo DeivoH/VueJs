@@ -34,7 +34,7 @@ const headers = [
           </div>
 
           <VRow>
-            <VCol cols="12" sm="3">
+            <VCol cols="12" sm="4">
 
               <VDataTable :headers="headers" :items="posts" :items-per-page="5" class="elevation-1">
                 <template #item.actions="{ item }">
@@ -48,18 +48,17 @@ const headers = [
               <VCard>
                 <VCardTitle class="d-flex">
                   <h3>Post de:</h3>
-                  <p class="ml-2" v-if="selectedPost">{{ selectedPost.userId }}</p>
+                  <p class="ml-2" v-if="selectedPost">{{ selectedPost.userName }}</p>
                 </VCardTitle>
                 <VCardText v-if="selectedPost">
                   <VRow>
                     <VCol cols="12">
-                      <p><strong>Título:</strong> {{ selectedPost.title }}</p>
+                      <p><strong>Título: </strong> {{ selectedPost.title }}</p>
                     </VCol>
-                    <VCol cols="4">
-                      {{ selectedPost.body }}
+                    <VCol cols="12" sm="4">
+                      <p><strong>Contenido: </strong> {{ selectedPost.body }}</p>
                     </VCol>
                   </VRow>
-
                 </VCardText>
                 <VCardText v-else>
                   <p class="text-grey">Seleccione un ítem para ver los detalles.</p>

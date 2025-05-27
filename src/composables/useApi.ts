@@ -12,14 +12,24 @@ export const useApi = createFetch({
   options: {
     refetch: true,
 
-    async onFetchError(ctx) {
-      const data = JSON.parse(ctx.data)
-      ctx.data = data// Modifies the response data 
-      if (ctx.data.message) toast("Error", ctx.data.message, "danger");
+    async onFetchError(ctx: any) {
+      try {
+        if (typeof ctx.data === 'string') {
+          ctx.data = JSON.parse(ctx.data)
+        }
+
+        toast("Error", "Error en la petición", "danger");
+
+      } catch (err) {
+        toast("Error", "Error procesando la respuesta del servidor", "danger");
+      }
+
       return ctx;
     },
 
+
     async beforeFetch({ options }) {
+
       const accessToken = useCookie("accessToken").value;
 
       if (accessToken) {

@@ -22,8 +22,7 @@ export function useToast() {
     })
   }
 
-
-  const toastValidation = (validation:any) => {
+  const toastValidation = (validation: any) => {
     for (const key in validation.errors) {
       toast(
         "El campo " + validation.errors[key].id + " es obligatorio",
@@ -31,9 +30,7 @@ export function useToast() {
         "danger"
       );
     }
-
   }
-
 
   return {
     toast,
